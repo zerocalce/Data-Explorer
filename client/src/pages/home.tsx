@@ -1,17 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Activity, 
-  Atom, 
-  Cpu, 
-  Database, 
-  Hexagon, 
-  Layers, 
-  Network, 
-  Share2, 
-  ShieldCheck, 
-  Terminal, 
-  Zap 
+import {
+  Activity,
+  Atom,
+  Cpu,
+  Database,
+  Hexagon,
+  Layers,
+  Network,
+  Share2,
+  Terminal,
+  Zap,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -145,7 +144,10 @@ export default function Home() {
             Zenith-Nexus
           </h1>
           <div className="flex items-center gap-3 mt-2">
-            <Badge variant="outline" className="border-primary text-primary bg-primary/10 rounded-none px-2 py-0.5 font-mono text-xs">
+            <Badge
+              variant="outline"
+              className="border-primary text-primary bg-primary/10 rounded-none px-2 py-0.5 font-mono text-xs"
+            >
               V.3.0.1
             </Badge>
             <span className="text-muted-foreground font-mono text-sm tracking-widest uppercase">
@@ -155,11 +157,15 @@ export default function Home() {
         </div>
         <div className="flex gap-4">
           <div className="text-right hidden md:block">
-            <div className="text-xs text-muted-foreground font-mono">SYSTEM STATUS</div>
+            <div className="text-xs text-muted-foreground font-mono">
+              SYSTEM STATUS
+            </div>
             <div className="text-accent font-display">ONLINE</div>
           </div>
           <div className="text-right hidden md:block">
-            <div className="text-xs text-muted-foreground font-mono">SECURE LINK</div>
+            <div className="text-xs text-muted-foreground font-mono">
+              SECURE LINK
+            </div>
             <div className="text-primary font-display">ENCRYPTED</div>
           </div>
         </div>
@@ -167,25 +173,30 @@ export default function Home() {
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
         {/* Left Column - Data */}
         <div className="md:col-span-4 space-y-6">
           <CyberCard title="Identity Matrix" icon={Share2}>
             <div className="space-y-4 font-mono text-sm">
               <div className="flex justify-between border-b border-white/5 pb-2">
                 <span className="text-muted-foreground">DESIGNATION</span>
-                <span className="text-primary">{MOLECULE_DATA.chemical_identity.designation}</span>
+                <span className="text-primary">
+                  {MOLECULE_DATA.chemical_identity.designation}
+                </span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-2">
                 <span className="text-muted-foreground">CLASS</span>
-                <span className="text-right max-w-[60%]">{MOLECULE_DATA.chemical_identity.class}</span>
+                <span className="text-right max-w-[60%]">
+                  {MOLECULE_DATA.chemical_identity.class}
+                </span>
               </div>
               <div className="flex justify-between border-b border-white/5 pb-2">
                 <span className="text-muted-foreground">FORMULA</span>
-                <span className="text-secondary">{MOLECULE_DATA.chemical_identity.molecular_formula}</span>
+                <span className="text-secondary">
+                  {MOLECULE_DATA.chemical_identity.molecular_formula}
+                </span>
               </div>
             </div>
-            
+
             <div className="mt-6 p-4 bg-primary/5 border border-primary/10 rounded">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {MOLECULE_DATA.chemical_identity.description}
@@ -202,7 +213,7 @@ export default function Home() {
                 </div>
                 <Progress value={85} className="h-1 bg-accent/20" />
               </div>
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono">
                   <span>ELECTRON VELOCITY</span>
@@ -224,17 +235,27 @@ export default function Home() {
 
         {/* Center Column - Visualizer */}
         <div className="md:col-span-5 space-y-6">
-          <CyberCard title="Structural Viz" icon={Hexagon} className="h-full min-h-[500px]">
+          <CyberCard
+            title="Structural Viz"
+            icon={Hexagon}
+            className="h-full min-h-[500px]"
+          >
             <CoreVisualizer />
             <div className="mt-4 grid grid-cols-2 gap-4">
-               <div className="bg-black/40 p-3 rounded border border-white/5">
-                  <div className="text-[10px] text-muted-foreground uppercase mb-1">Coordination Center</div>
-                  <div className="font-display text-lg text-primary">Ru(II)</div>
-               </div>
-               <div className="bg-black/40 p-3 rounded border border-white/5">
-                  <div className="text-[10px] text-muted-foreground uppercase mb-1">Peripheral Nodes</div>
-                  <div className="font-display text-lg text-secondary">6x Co(II)</div>
-               </div>
+              <div className="bg-black/40 p-3 rounded border border-white/5">
+                <div className="text-[10px] text-muted-foreground uppercase mb-1">
+                  Coordination Center
+                </div>
+                <div className="font-display text-lg text-primary">Ru(II)</div>
+              </div>
+              <div className="bg-black/40 p-3 rounded border border-white/5">
+                <div className="text-[10px] text-muted-foreground uppercase mb-1">
+                  Peripheral Nodes
+                </div>
+                <div className="font-display text-lg text-secondary">
+                  6x Co(II)
+                </div>
+              </div>
             </div>
           </CyberCard>
         </div>
@@ -242,50 +263,58 @@ export default function Home() {
         {/* Right Column - Terminal/Details */}
         <div className="md:col-span-3 space-y-6">
           <CyberCard title="Data Stream" icon={Terminal}>
-             <ScrollArea className="h-[200px] font-mono text-xs text-muted-foreground">
-                <div className="space-y-2">
-                  <p><span className="text-primary">{">"}</span> INITIALIZING SEQUENCE...</p>
-                  <p><span className="text-primary">{">"}</span> CONNECTING TO IPFS NODE...</p>
-                  <p><span className="text-primary">{">"}</span> RETRIEVING CID: bafkre...vaea</p>
-                  <p><span className="text-green-500">{">"}</span> DATA INTEGRITY: 100%</p>
-                  <p><span className="text-primary">{">"}</span> PARSING SMILES STRING...</p>
-                  <div className="text-white/30 break-all pl-4 border-l border-white/10 my-2">
-                    {MOLECULE_DATA.structural_data.SMILES_Simplified}
-                  </div>
-                  <p><span className="text-primary">{">"}</span> RENDERING MODEL...</p>
-                  <p><span className="text-green-500">{">"}</span> READY.</p>
+            <ScrollArea className="h-[200px] font-mono text-xs text-muted-foreground">
+              <div className="space-y-2">
+                <p>
+                  <span className="text-primary">{">"}</span> INITIALIZING
+                  SEQUENCE...
+                </p>
+                <p>
+                  <span className="text-primary">{">"}</span> CONNECTING TO IPFS
+                  NODE...
+                </p>
+                <p>
+                  <span className="text-primary">{">"}</span> RETRIEVING CID:
+                  bafkre...vaea
+                </p>
+                <p>
+                  <span className="text-green-500">{">"}</span> DATA INTEGRITY:
+                  100%
+                </p>
+                <p>
+                  <span className="text-primary">{">"}</span> PARSING SMILES
+                  STRING...
+                </p>
+                <div className="text-white/30 break-all pl-4 border-l border-white/10 my-2">
+                  {MOLECULE_DATA.structural_data.SMILES_Simplified}
                 </div>
-             </ScrollArea>
+                <p>
+                  <span className="text-primary">{">"}</span> RENDERING MODEL...
+                </p>
+                <p>
+                  <span className="text-green-500">{">"}</span> READY.
+                </p>
+              </div>
+            </ScrollArea>
           </CyberCard>
 
           <CyberCard title="Architecture" icon={Network}>
-             <div className="space-y-3">
-                <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
-                   <Layers className="w-4 h-4 text-secondary group-hover:text-white transition-colors" />
-                   <div className="text-sm font-mono">Octahedral Core</div>
-                </div>
-                <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
-                   <Layers className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
-                   <div className="text-sm font-mono">Square Planar Nodes</div>
-                </div>
-                <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
-                   <Zap className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
-                   <div className="text-sm font-mono">Pi-Conjugation</div>
-                </div>
-             </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
+                <Layers className="w-4 h-4 text-secondary group-hover:text-white transition-colors" />
+                <div className="text-sm font-mono">Octahedral Core</div>
+              </div>
+              <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
+                <Layers className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
+                <div className="text-sm font-mono">Square Planar Nodes</div>
+              </div>
+              <div className="flex items-center gap-3 p-2 rounded bg-white/5 hover:bg-white/10 transition-colors cursor-default group">
+                <Zap className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                <div className="text-sm font-mono">Pi-Conjugation</div>
+              </div>
+            </div>
           </CyberCard>
-
-          <div className="p-4 border border-destructive/30 bg-destructive/5 rounded cyber-clip-inverse">
-             <div className="flex items-center gap-2 text-destructive mb-2">
-               <ShieldCheck className="w-4 h-4" />
-               <span className="text-xs font-bold tracking-widest uppercase">Security Protocol</span>
-             </div>
-             <p className="text-[10px] text-destructive/80 font-mono">
-               UNAUTHORIZED REPLICATION OF THIS MOLECULAR STRUCTURE IS PROHIBITED BY INTERGALACTIC TREATY 77-B.
-             </p>
-          </div>
         </div>
-
       </div>
     </div>
   );
